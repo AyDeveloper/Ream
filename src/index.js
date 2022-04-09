@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Dashboard from './pages/dashboard/dashboard';
 
 
 ReactDOM.render(
@@ -12,7 +13,7 @@ ReactDOM.render(
           <Route path='/' element={<App/>} />
           <Route path='/pricing' element={<App/>} />
           <Route path='/contact' element={<App/>} />
-          <Route path='/login' element={<App/>} />
+          <Route path='/dashboard' element={<Dashboard/>} />
         </Routes>
     </BrowserRouter>
   </React.StrictMode>,

@@ -10,10 +10,10 @@ const Header = () => {
             <h1 className={Styles.header}>r<span>e</span>am</h1>
         </div>
         <nav className={Styles.navContainer}>
-            <Link to='/dashboard'>dashboard</Link>
+            <Link to='/'>Home</Link>
             <Link to='/pricing'>pricing</Link>
             <Link to='/contact'>contact</Link>
-            <Link to='/login'>login</Link>
+            <Link to='/dashboard'>dashboard</Link>
         </nav>
       </div>
     </div>

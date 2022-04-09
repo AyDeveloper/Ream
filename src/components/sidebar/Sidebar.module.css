@@ -1,0 +1,27 @@
+.container{
+    width: 20%;
+    height: 83vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container a{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #495371;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.container a:hover{
+    color: white;
+    background-color: #EFDE2B;
+}
+
