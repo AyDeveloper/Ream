@@ -1,0 +1,32 @@
+.container{
+    height: 10vh;
+    margin: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 0;
+}
+
+.container > div{
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #2B678A;
+}
+
+a{
+    text-decoration-line: none;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 27px;
+    color: #2B678A;
+}

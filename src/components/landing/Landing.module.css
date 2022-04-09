@@ -1,0 +1,75 @@
+.LandingContainer{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    margin: 0 10%;
+}
+
+main{
+    height: 80%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 87px;
+}
+
+.extra{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    color: #000000;
+}
+
+.buttonWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button:nth-of-type(1){
+    border-radius: 10px;
+    width: 12em;
+    height: 4em;
+    outline: none;
+    background: #FFFFFF;
+    border: 1px solid #F4F6FE;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+button:nth-of-type(2){
+    background: #EFDE2B;
+    border-radius: 10px;
+    width: 12em;
+    height: 4em;
+    outline: none;
+    border: 1px solid #F4F6FE;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+span{
+    color: #2B678A;
+}
+
+.bannerDiv{
+    width: 100%;
+}
+
+p{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    color: #000000;
+}
