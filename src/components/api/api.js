@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Style  from "./api.module.css"
+import Style  from "./api.module.css";
 
 
 const Api = () => {
