@@ -7,7 +7,7 @@
 
 .headerWrapper{
     margin: 0 10%;
-    width: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +20,6 @@
     line-height: 55px;
     letter-spacing: 0em;
     text-align: left;
-    margin-left: -75px;
 }
 
 a{
