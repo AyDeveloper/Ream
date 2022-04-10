@@ -20,6 +20,7 @@
     line-height: 55px;
     letter-spacing: 0em;
     text-align: left;
+    margin-left: -75px;
 }
 
 a{
@@ -30,9 +31,14 @@ a{
     letter-spacing: 0em;
     /* text-align: left; */
     text-decoration-line: none;
-    color: #398AB9;
+    color: #33ff;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all 0.5s ease-in;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .navContainer{
