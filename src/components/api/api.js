@@ -25,25 +25,52 @@ const Api = () => {
         setData(arr);
     }
 
-  function exactToken(amount) {
-    return (amount / Math.pow(10, 18)).toFixed(2);
-}
+    function exactToken(amount) {
+        return (amount / Math.pow(10, 18)).toFixed(2);
+    }
 
-useEffect(() =>{
-    getApi();
-    
-},[changeApi])
+    useEffect(() =>{
+        getApi();
+        
+    },[changeApi])
 
-const onchangeHandler = (e) => {
-    setChangeApi(e.target.value)
-}
+    const onchangeHandler = (e) => {
+        setChangeApi(e.target.value)
+    }
+    const rates = [];
+    const balances = [];
+
+    let rateSum = 0;
+    let rateBalances = 0;
+
+    data.forEach((item)=>{
+        balances.push(item.balance)
+        rates.push(item.rate)
+    })
+
+    console.log(rates);
+    console.log(balances);
+
+    for (let i = 0; i < rates.length; i++) {
+        rateSum += Number(rates[i]);
+    }
+
+    for (let i = 0; i < balances.length; i++) {
+        rateBalances += Number(balances[i]);
+    }
+
+    console.log(rateSum);
+    console.log(rateBalances);
+
+    let Total = rateSum * rateBalances;
+
 
   return (
           <div className={Style.container}>
               <div className={Style.searchbar}>
                   {/* <input type="search" name="" id="" placeholder='Search for DAO’s'/>
                   <img src={search} alt="" /> */}
-                <label for="cars">Choose a DAO:</label>
+                <label htmlFor="cars">Choose a DAO:</label>
                 <select name="dao" id="dao"   onClick={onchangeHandler}>
                     <option value="0x1a9C8182C09F50C8318d769245beA52c32BE35BC">Uniswap</option>
                     <option value="0x78605Df79524164911C144801f41e9811B7DB73D">Bit Dao</option>
@@ -58,45 +85,33 @@ const onchangeHandler = (e) => {
                 </select>
               </div>
             <div className={Style.wrapper}>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Asset</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                    </tr>
-                </thead>
-                {
-                    data.map((item, index) =>{
-                        return (
-                            <tbody className={Style.tbody} key={index}>
-                                <tr>
-                                    <td>{item.name}</td>
-                                    <td>${item.rate}</td>
-                                    <td>{item.balance}</td>
-                                </tr>
-                            </tbody>
-                        )
-                    } )
-                }
-            </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    {
+                        data.map((item, index) =>{
+                            return (
+                                <tbody className={Style.tbody} key={index}>
+                                    <tr>
+                                        <td>{item.name}</td>
+                                        <td>${item.rate}</td>
+                                        <td>{item.balance}</td>
+                                    </tr>
+                                </tbody>
+                            )
+                        } )
+                    }
+                </table>
             </div>
-
-            <div className={Style.portfolio}>
-                <div className={Style.portMain}>
-                <div className={Style.portfolioMain}>
-                    <h3>Portfolio Finance</h3>
-                    <span>30Days</span>
-                <div/>
-                <div className={Style.card}>
-                    <h3>Treasury</h3>
-                    <p>$1.23<span>B</span></p>
-               <div/>
-             
+            <div>
+                <p>Treasury</p>
+                <p>${Total.toLocaleString("en-US")}</p>
             </div>
-        </div>
-        </div>
-        </div>
         </div>
   )
 }
