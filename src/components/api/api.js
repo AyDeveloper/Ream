@@ -92,7 +92,7 @@ const Api = () => {
                         )
                     })
                 } */}
-                <p>Treasury</p>
+                <h3>Treasury</h3>
                 <p>${Total.toLocaleString("en-US")}</p>
             </div>
             <div className={Style.wrapper}>

@@ -50,9 +50,12 @@ td img{
     outline: none;
 }
 
-
 tr{
     text-align: left;
+}
+
+.Treasury h3{
+    text-transform: capitalize;
 }
 
 

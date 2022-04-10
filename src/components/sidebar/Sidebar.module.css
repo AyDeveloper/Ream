@@ -18,10 +18,12 @@
     width: 100%;
     padding: 20px 0px;
     text-align: center;
+    text-decoration-line: none;
 }
 
 .container a:hover{
     color: white;
-    background-color: #33ff;
+    background-color: #EFDE2B;
+
 }
 
