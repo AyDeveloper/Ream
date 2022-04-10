@@ -10,14 +10,12 @@
 }
 
 .wrapper{
-    position: absolute;
-    top: 20rem;
-    left: 25px;
     height: 50%;
     width: 90%;
     flex-direction: column;
     display: flex;
     text-align: center;
+    overflow-y: scroll;
 }
 
 .info{
@@ -26,7 +24,7 @@
     width: 100%;
 }
 
-.info img{
+td img{
     width: 20px;
 }
 
@@ -57,50 +55,7 @@ tr{
     text-align: left;
 }
 
-.tbody tr td:nth-child(odd) {
-    background-color: #33f;
-    color: white;
-}
 
-.tbody tr td:nth-child(even) {
-    background-color: black;
-    color: white;
-}
 
-.portfolio {
-    position: absolute;
-    top: 6rem;
-    width: 90%;
-    left: 20px;
-    margin-top: 3rem;
-    background-color:hsla(240,100%,60%,0.52);
-background-image:
-radial-gradient(at 10% 35%, hsla(240,100%,60%,1) 0px, transparent 50%),
-radial-gradient(at 80% 0%, hsla(202,52%,35%,1) 0px, transparent 50%);
-    margin-bottom: 20rem;
-    padding: 20px 25px;
-}
 
-.portfolioMain {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-}
 
-.portfolioMain h3 {
-    text-transform: capitalize;
-    color: #333;
-}
-
-.portfolioMain span {
-    background-color: #f3f3f3;
-    padding: 10px 8px;
-    border-radius: 8px;
-}
-
-.card {
-    background-color: white;
-    padding: 20px 30px;
-}
-    

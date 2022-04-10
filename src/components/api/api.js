@@ -84,10 +84,22 @@ const Api = () => {
                     <option value="0x5efda50f22d34F262c29268506C5Fa42cB56A1Ce">Tornado Cash</option>
                 </select>
               </div>
+            <div className={Style.Treasury}>
+                {/* {
+                    data.map(item =>{
+                        return(
+                            <h1>{item.name}</h1>
+                        )
+                    })
+                } */}
+                <p>Treasury</p>
+                <p>${Total.toLocaleString("en-US")}</p>
+            </div>
             <div className={Style.wrapper}>
                 <table>
                     <thead>
                         <tr>
+                            <th>Logo</th>
                             <th>Asset</th>
                             <th>Price</th>
                             <th>Quantity</th>
@@ -98,6 +110,7 @@ const Api = () => {
                             return (
                                 <tbody className={Style.tbody} key={index}>
                                     <tr>
+                                        <td><img src={item.logo} alt="" /></td>
                                         <td>{item.name}</td>
                                         <td>${item.rate}</td>
                                         <td>{item.balance}</td>
@@ -107,10 +120,6 @@ const Api = () => {
                         } )
                     }
                 </table>
-            </div>
-            <div>
-                <p>Treasury</p>
-                <p>${Total.toLocaleString("en-US")}</p>
             </div>
         </div>
   )
