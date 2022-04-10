@@ -1,4 +1,55 @@
 .container{
+    height: 100%;
+    width: 100%;
+    padding: 2rem 8rem;
     display: flex;
-    height: 100px;
+    flex-direction: column;
+    /* display: flex; */
+    /* height: 100px; */
+}
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+}
+
+.info{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.info img{
+    width: 20px;
+}
+
+.searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 5rem; 
+}
+
+.searchbar input{
+    border-radius: 10px;
+    background-color: white;
+    width: 20rem;
+    height: 4rem;
+    outline: none;
+    border: none;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.searchbar img{
+    width: 20px;
+    position: absolute;
+    right: 9rem;
+}
+
+tr{
+    text-align: left;
 }

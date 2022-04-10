@@ -1,6 +1,6 @@
 .container{
     width: 20%;
-    height: 83vh;
+    height: 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
