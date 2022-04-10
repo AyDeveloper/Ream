@@ -10,7 +10,7 @@
 }
 
 .wrapper{
-    height: 50%;
+    height: 60%;
     width: 90%;
     flex-direction: column;
     display: flex;
@@ -52,6 +52,15 @@ td img{
 
 tr{
     text-align: left;
+}
+
+td{
+    border-bottom: 1px solid black;
+    padding: 1rem 0;
+}
+
+.Treasury{
+    display: flex;
 }
 
 .Treasury h3{
