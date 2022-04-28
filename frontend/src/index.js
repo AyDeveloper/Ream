@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Dashboard from './pages/dashboard/dashboard';
+import Dashboard from './pages/dashboard/dashboard/dashboard';
+import Investment from './pages/dashboard/investment/investment';
+import Sendfund from './pages/dashboard/sendFund/sendfund';
+import Receipt from './pages/dashboard/receipt/receipt';
 
 
 ReactDOM.render(
@@ -14,6 +17,9 @@ ReactDOM.render(
           <Route path='/pricing' element={<App/>} />
           <Route path='/contact' element={<App/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
+          <Route path='/receipt' element={<Receipt/>} />
+          <Route path='/investment' element={<Investment/>} />
+          <Route path='/sendfund' element={<Sendfund/>} />
         </Routes>
     </BrowserRouter>
   </React.StrictMode>,

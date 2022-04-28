@@ -6,7 +6,9 @@ const Sidebar = () => {
   return (
     <div className={Styles.container}>
         <Link to='/dashboard'>Dashboard</Link>
-        <Link to='/analysis'>Analysis</Link>
+        <Link to='/receipt'>Receipt</Link>
+        <Link to='/investment'>Investment</Link>
+        <Link to='/sendfund'>Send Funds</Link>
     </div>
   )
 }
