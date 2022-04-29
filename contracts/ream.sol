@@ -13,7 +13,6 @@ contract Ream {
         _;
     }
 
-
     event Send(uint amount, address to, string desc);
     event Receive(uint amount, address from);
 

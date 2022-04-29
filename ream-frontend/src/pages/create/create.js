@@ -5,7 +5,7 @@ import Api from './../../components/api/api'
 import Styles from './create.module.css'
 import ContractInteraction from '../../components/contractInteraction/contractInteraction'
 
-const Dashboard = () => {
+const Create = () => {
   return (
     <div>
         <Header/>
@@ -18,4 +18,4 @@ const Dashboard = () => {
 }
 
 
-export default Dashboard
+export default Create

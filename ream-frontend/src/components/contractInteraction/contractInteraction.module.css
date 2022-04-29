@@ -1,0 +1,56 @@
+.container{
+    width: 80%;
+    padding: 1rem 8rem;
+}
+
+.adminContainer{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.admin{
+    background: #FFFFFF;
+    border-radius: 10px;
+    height: 3rem;
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.status{
+    width: 12px;
+    height: 12px;
+    background: #569E77;
+    border-radius: 100%;
+}
+
+.nodisplay{
+    display: none;
+}
+
+.display{
+    display: block;
+}
+
+h2{
+    text-align: left;
+}
+
+.table{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    width: 80%;
+}
+
+td{
+    border: none;
+}
+
