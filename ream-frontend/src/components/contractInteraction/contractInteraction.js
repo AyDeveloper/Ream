@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { ethers } from 'ethers'
 import {CA}  from "../../utils/contract"
 import {abi} from '../../utils/abi'
 import { addressShortner } from '../../utils/helper'
 import Styles from './contractInteraction.module.css'
-import { ethers } from 'ethers'
 
 const ContractInteraction = () => {
     const [adminAddress,setAdminAddress] = useState("");
-    const[contract, setContract] = useState("")
+    const[contract, setContract] = useState("");
     const[displayContract, setDisplayContract] = useState(false);
 
-    
     const createReamTreasury = async() =>{
       try {
           if (window.ethereum) {
@@ -19,12 +18,12 @@ const ContractInteraction = () => {
               setAdminAddress(account);
               const provider = new ethers.providers.Web3Provider(window.ethereum);
               const signer = provider.getSigner();
-              const reamFactory = new ethers.Contract(CA,abi,signer)
+              const reamFactory = new ethers.Contract(CA,abi,signer);
               const createReamTreasury = await reamFactory.createReamTreasury(account);
               const waitCreateReamTreasury = await createReamTreasury.wait();
              const newContract = await waitCreateReamTreasury.events[0].args[1];
-             setContract(newContract)
-             setDisplayContract(true)
+             setContract(newContract);
+             setDisplayContract(true);
           } else {
               console.log("connect metamask");
           }
@@ -37,8 +36,7 @@ const ContractInteraction = () => {
           if (window.ethereum) {
               const provider = new ethers.providers.Web3Provider(window.ethereum);
               const signer = provider.getSigner();
-              const reamFactory = new ethers.Contract(CA,abi,signer)  
-
+              const reamFactory = new ethers.Contract(CA,abi,signer);
               const allReamTreasury = await reamFactory.allReamTreasury();
               console.log(allReamTreasury);
           } else {
@@ -50,7 +48,7 @@ const ContractInteraction = () => {
    }
 
  useEffect(()=>{
-    createReamTreasury()
+    createReamTreasury();
  },[])
 
   return (
