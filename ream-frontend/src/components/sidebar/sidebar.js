@@ -5,7 +5,7 @@ import Styles from './Sidebar.module.css'
 const Sidebar = () => {
   return (
     <div className={Styles.container}>
-        <Link to='/dashboard'>Dashboard</Link>
+        <Link to='/create'>Create</Link>
         <Link to='/receipt'>Receipt</Link>
         <Link to='/investment'>Investment</Link>
         <Link to='/sendfund'>Send Funds</Link>

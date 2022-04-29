@@ -10,7 +10,7 @@ contract Ream {
 
     modifier onlyAdmin() {
         require(msg.sender == admin);
-        ;
+        _;
     }
 
 
