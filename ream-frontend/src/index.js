@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Dashboard from './pages/dashboard/create/create';
-import Investment from './pages/dashboard/investment/investment';
-import Sendfund from './pages/dashboard/sendFund/sendfund';
-import Receipt from './pages/dashboard/receipt/receipt';
-import Create from './pages/dashboard/contractInteraction/contractInteraction';
+import Dashboard from './pages/create/create';
+import Investment from './pages/investment/investment';
+import Sendfund from './pages/sendFund/sendfund';
+import Receipt from './pages/receipt/receipt';
+import Create from './pages/create/create';
 
 
 ReactDOM.render(
@@ -17,7 +17,7 @@ ReactDOM.render(
           <Route path='/' element={<App/>} />
           <Route path='/pricing' element={<App/>} />
           <Route path='/contact' element={<App/>} />
-          <Route path='/create' element={<Dashboard/>} />
+          <Route path='/create' element={<Create/>} />
           <Route path='/receipt' element={<Receipt/>} />
           <Route path='/investment' element={<Investment/>} />
           <Route path='/sendfund' element={<Sendfund/>} />
