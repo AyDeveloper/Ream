@@ -1,0 +1,63 @@
+.container{
+    width: 80%;
+    padding: 1rem 8rem;
+}
+
+.anotherContainer{
+    display: flex;
+    background: #EFDE2B;
+    flex-direction: column;
+    height: 100%;
+    padding: 0.5rem 4rem;
+    border-radius: 10px;
+}
+
+.matic{
+    width: 100%;
+}
+
+p{
+    text-align: end;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input::placeholder{
+    color: white;
+}
+
+input{
+    background: rgba(179, 169, 67, 0.26);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+input:nth-of-type(1){
+    height: 20%;
+
+}
+input:nth-of-type(2){
+    height: 20%;
+}
+input:nth-of-type(3){
+    height: 30%;
+}
+
+button{
+    text-transform: uppercase;
+}

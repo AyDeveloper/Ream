@@ -5,13 +5,18 @@ import Api from './../../components/api/api'
 import Styles from './create.module.css'
 import ContractInteraction from '../../components/contractInteraction/contractInteraction'
 
-const Create = () => {
+const Create = ({adminAddress,contract,displayContract,createReamTreasury}) => {
   return (
     <div>
         <Header/>
         <div className={Styles.wrapper}>
             <Sidebar/>
-            <ContractInteraction/>
+            <ContractInteraction
+            adminAddress={adminAddress}
+            contract={contract}
+            displayContract={displayContract}
+            createReamTreasury={createReamTreasury}
+            />
         </div>
     </div>
   )
