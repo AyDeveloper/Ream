@@ -26,12 +26,19 @@ function App() {
             setAdminAddress(account);
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
-            const reamFactory = new ethers.Contract(CA,abi,signer)
-            const createReamTreasury = await reamFactory.createReamTreasury(account);
-            const waitCreateReamTreasury = await createReamTreasury.wait();
-           const newContract = await waitCreateReamTreasury.events[0].args[1];
-           setContract(newContract)
-           setDisplayContract(true)
+            const reamFactory = new ethers.Contract(CA,abi,signer);
+            const check = reamFactory.userCreated(account);
+            if (!check) {
+              const createReamTreasury = await reamFactory.createReamTreasury();
+              const waitCreateReamTreasury = await createReamTreasury.wait();
+              const getContract =  waitCreateReamTreasury.events[0].args[1];
+              setContract(getContract)
+              setDisplayContract(true)
+            } else {
+              const getContract = await reamFactory.userToReamAddr(account);
+              setContract(getContract)
+              setDisplayContract(true)
+            }
         } else {
             console.log("connect metamask");
         }

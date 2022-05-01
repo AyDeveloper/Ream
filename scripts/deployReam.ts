@@ -3,7 +3,8 @@
 //
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
-import { ethers } from "hardhat";
+import { ethers } from 'hardhat'
+import "@nomiclabs/hardhat-ethers";
 
 async function main() {
   // Hardhat always runs the compile task when running scripts with its command
@@ -14,27 +15,30 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const reamFactory = await ethers.getContractFactory("ReamFactory");
-  const deployreamFactory = await reamFactory.deploy();
 
-  await deployreamFactory.deployed();
+  const admin = "0xbf5FfE07d3DCCcb143EE3Fd9F38B1520a34fcB47"
+  const Greeter = await ethers.getContractFactory("Ream");
+  const greeter = await Greeter.deploy(admin);
 
-  console.log("Greeter deployed to:", deployreamFactory.address);
+  await greeter.deployed();
+
+  console.log("Greeter deployed to:", greeter.address);
 
   console.log("Sleeping.....");
   // Wait for etherscan to notice that the contract has been deployed
-  await sleep(100000);
+  await sleep(50000);
 
   // Verify the contract after deploying
   //@ts-ignore
   await hre.run("verify:verify", {
-    address: deployreamFactory.address,
-    constructorArguments: [],
+    address: greeter.address,
+    constructorArguments: [admin],
   });
 }
 function sleep(ms:any) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main().catch((error) => {

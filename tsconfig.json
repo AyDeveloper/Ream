@@ -5,8 +5,13 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "dist",
+    "sourceMap": true,
+    "declarationMap": true,
+    "rootDirs": ["./src", "./scripts", "./test"],
     "declaration": true
   },
   "include": ["./scripts", "./test", "./typechain"],
-  "files": ["./hardhat.config.ts"]
+  "files": ["./hardhat.config.ts"],
+  "exclude": ["dist", "node_modules"],
 }
+
