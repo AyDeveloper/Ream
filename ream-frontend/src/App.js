@@ -63,17 +63,13 @@ function App() {
     }
  }
 
- const getEvents = async() =>{
+ const getSendEvents = async() =>{
   try {
       if (window.ethereum) {
         const provider = new ethers.providers.JsonRpcProvider(process.env.REACT_APP_RPC_URL);
-        const signer = provider.getSigner();
-        const ream = new ethers.Contract(contract,reamAbi,signer)
+        const ream = new ethers.Contract(contract,reamAbi,provider)
         const sendEvent = await ream.queryFilter("Send");
-        console.log(sendEvent);
-        setSendEvent({
-          sendEvent
-        })
+        console.log("sendEvent",await sendEvent);
       } else {
           
       }
@@ -82,6 +78,21 @@ function App() {
   }
 }
 
+ const getReceiveEvents = async() =>{
+  try {
+      if (window.ethereum) {
+        const provider = new ethers.providers.JsonRpcProvider(process.env.REACT_APP_RPC_URL);
+        const ream = new ethers.Contract(contract,reamAbi,provider)
+        const receiveEvent = await ream.queryFilter("Receive");
+        console.log("receiveEvent",receiveEvent);
+      } else {
+          
+      }
+  } catch (error) {
+      console.log(error);
+  }
+}
+ 
   return (
     <BrowserRouter>
     <Routes>
@@ -96,6 +107,8 @@ function App() {
         />} />
         <Route path='/receipt' element={<Receipt
             contract={contract}
+            getSendEvents={getSendEvents}
+            getReceiveEvents={getReceiveEvents}
         />} />
         <Route path='/investment' element={<Investment/>} />
         <Route path='/sendfund' element={<Sendfund

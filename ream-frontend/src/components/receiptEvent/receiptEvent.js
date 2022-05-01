@@ -1,13 +1,16 @@
-import React,{useContext} from 'react'
+import React,{useContext, useEffect} from 'react'
 
-import { Contract, ethers } from 'ethers'
 
-const ReceiptEvent = ({contract}) => {
+const ReceiptEvent = ({contract, getSendEvents,getReceiveEvents}) => {
  const CA = contract
+
+ useEffect(()=>{
+    getReceiveEvents()
+ },[])
 
   return (
     <div>
-
+       
     </div>
   )
 }
