@@ -11,6 +11,10 @@
 }
 
 .admin{
+    display: flex;
+}
+
+.admin > p{
     background: #FFFFFF;
     border-radius: 10px;
     height: 3rem;
@@ -36,6 +40,17 @@
     display: block;
 }
 
+.display p{
+    text-align: left;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
 .table{
     width: 100%;
     display: flex;
@@ -49,4 +64,6 @@ table{
 td{
     border: none;
 }
+
+
 

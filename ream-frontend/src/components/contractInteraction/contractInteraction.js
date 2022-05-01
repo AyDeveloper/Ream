@@ -45,7 +45,7 @@ const ContractInteraction = ({adminAddress,contract,displayContract,createReamTr
     <div className={Styles.container}>
         <div className={Styles.adminContainer}>
             <div className={Styles.admin}>
-                <p>Admin</p>
+                <h3>Admin</h3>
                 <p>{addressShortner(adminAddress,true)}</p>
             </div>
             <div className={Styles.status}>
@@ -54,8 +54,8 @@ const ContractInteraction = ({adminAddress,contract,displayContract,createReamTr
         <div className={displayContract?Styles.display:Styles.nodisplay}>
             <p>dao address:{contract}</p>
         </div>
-        <div>
-            <form onSubmit={deposit}>
+        <div className={displayContract?Styles.display:Styles.nodisplay} >
+            <form onSubmit={deposit} className={Styles.form}>
                 <input type="text" placeholder='Deposit matic' id='deposit' onChange={handleDeposit}/>
                 <button>Deposit</button>
             </form>
