@@ -6,7 +6,7 @@ import { reamAbi } from '../../utils/reamabi'
 
 const ContractInteraction = ({adminAddress,contract,displayContract,createReamTreasury}) => {
     const CA = contract
-    const[depositValue,setDepositValue] = useState();
+    const[depositValue,setDepositValue] = useState("");
 
     const deposit = async(e) =>{
         e.preventDefault();
@@ -38,7 +38,7 @@ const ContractInteraction = ({adminAddress,contract,displayContract,createReamTr
 
 
  useEffect(()=>{
-    createReamTreasury()
+    createReamTreasury();
  },[])
 
   return (

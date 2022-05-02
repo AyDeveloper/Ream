@@ -58,6 +58,11 @@ input::placeholder{
     height: 30%;
 }
 
-button{
+.wrapper button{
     text-transform: uppercase;
+    background-color: white;
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
 }
