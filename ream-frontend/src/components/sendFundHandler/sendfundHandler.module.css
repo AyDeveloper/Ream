@@ -26,7 +26,7 @@ p{
     height: 80%;
 }
 
-form{
+.wrapper form{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -38,7 +38,7 @@ input::placeholder{
     color: white;
 }
 
-input{
+.wrapper input{
     background: rgba(179, 169, 67, 0.26);
     border-radius: 10px;
     outline: none;
@@ -47,14 +47,14 @@ input{
     width: 100%;
 }
 
-input:nth-of-type(1){
+.wrapper input:nth-of-type(1){
     height: 20%;
 
 }
-input:nth-of-type(2){
+.wrapper input:nth-of-type(2){
     height: 20%;
 }
-input:nth-of-type(3){
+.wrapper input:nth-of-type(3){
     height: 30%;
 }
 

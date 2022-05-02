@@ -36,7 +36,7 @@ main{
     justify-content: space-between;
 }
 
-button:nth-of-type(1){
+.buttonWrapper > :nth-child(1){
     border-radius: 10px;
     width: 12em;
     height: 4em;
@@ -46,7 +46,7 @@ button:nth-of-type(1){
     box-sizing: border-box;
     cursor: pointer;
 }
-button:nth-of-type(2){
+.buttonWrapper > :nth-child(2){
     background: #EFDE2B;
     border-radius: 10px;
     width: 12em;

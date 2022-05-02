@@ -54,10 +54,10 @@ const ContractInteraction = ({adminAddress,contract,displayContract,createReamTr
         <div className={displayContract?Styles.display:Styles.nodisplay}>
             <p>dao address:{contract}</p>
         </div>
-        <div className={displayContract?Styles.display:Styles.nodisplay} >
+        <div className={displayContract?Styles.depositWrapper:Styles.nodisplay} >
             <form onSubmit={deposit} className={Styles.form}>
                 <input type="text" placeholder='Deposit matic' id='deposit' onChange={handleDeposit}/>
-                <button>Deposit</button>
+                <button className={Styles.depositbutton}>Deposit</button>
             </form>
         </div>
         <h2 style={{textAlign:"left"}}>Assets</h2>

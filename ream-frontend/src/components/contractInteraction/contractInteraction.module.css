@@ -44,11 +44,40 @@
     text-align: left;
 }
 
+.depositWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+}
+
 .form{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
+}
+
+.form input{
+    height: 2rem;
+    width: 10rem;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+
+.depositbutton{
+    height: 2rem;
+    width: 5rem;
+    /* padding: 3rem 1rem; */
+    outline: none;
+    border: 1px solid #F4F6FE;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #495371;
+    text-align: center;
+    border-radius: 3px;
+    color: white;
 }
 
 .table{
