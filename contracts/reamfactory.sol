@@ -6,10 +6,7 @@ import  "./ream.sol";
 contract ReamFactory {
 
     address public admin;
-    constructor(address _admin) {
-        admin = admin;
-    }
-
+    
     Ream[] private _Ream;
 
     event CreateReam(address _admin, address contractAddr);
@@ -17,11 +14,13 @@ contract ReamFactory {
     event Receive(uint amount, address from);
     mapping(address => bool) public userCreated;
     mapping(address => address) public userToReamAddr;
-    mapping(address=>uint) depositor;
+    mapping(address=>uint) public depositor;
 
+
+    address ream = userToReamAddr[msg.sender];
 
     modifier onlyAdmin() {
-        require(msg.sender == admin);
+        require(msg.sender == admin,"Only admin can perform this action");
         _;
     }
 
@@ -30,19 +29,22 @@ contract ReamFactory {
         Ream ream = new Ream(msg.sender);
         userToReamAddr[msg.sender] = address(ream);
         userCreated[msg.sender] = true;
+        admin = msg.sender; 
         emit CreateReam(msg.sender, address(ream));
     }
 
-    function sendFundsToReam(uint amount, address _to, string memory desc) public onlyAdmin {
-        (bool sent, ) = _to.call{value:amount}(abi.encodeWithSignature("sendFunds(uint amount, address _to, string memory desc)",amount,_to,desc));
+    function depositToReam() public payable onlyAdmin{
+        depositor[msg.sender] += msg.value;
+        (bool sent, ) = userToReamAddr[msg.sender].call{value:msg.value}(abi.encodeWithSignature("deposit()"));
         require(sent, "Failed to send");
-        emit Send(amount, _to, desc);
+        emit Receive(msg.value, msg.sender);
     }
 
-    function depositToReam(uint amount) public payable onlyAdmin{
-        depositor[msg.sender] += msg.value;
-        (bool sent, ) = userToReamAddr[msg.sender].call{value:amount}(abi.encodeWithSignature("deposit(amount)"));
-        emit Receive(msg.value, msg.sender);
+    function sendFundsFromReam(uint amount, address _to, string memory desc) public onlyAdmin {
+        require(amount <= address(this).balance,"Amount above tresury");
+        (bool sent, bytes memory data) = userToReamAddr[msg.sender].call{gas: 5000}(abi.encodeWithSignature("sendFunds(uint amount, address _to, string memory desc)",amount,_to,desc));
+        require(sent, "Failed to send");
+        emit Send(amount, _to, desc);
     }
 
     function allReamTreasury() public view returns (Ream[] memory) {

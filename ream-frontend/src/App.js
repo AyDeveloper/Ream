@@ -35,9 +35,11 @@ function App() {
               setContract(getContract)
               setDisplayContract(true)
             } 
+            else{
               const getContract = await reamFactory.userToReamAddr(account);
               setContract(getContract)
               setDisplayContract(true)
+            }  
     
         } else {
             console.log("connect metamask");
