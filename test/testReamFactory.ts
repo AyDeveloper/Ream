@@ -37,10 +37,13 @@ describe("Ream Factory", function () {
     expect(admin).to.equal(owner.address);
   });
   it("Should deposit to ream", async function () {
-    const deposit =  await deployReamFactory.depositToReam();
-    // const wait = create.wait();
-    const aamotDeposited = await deployReamFactory.depositor(owner.address);
-    expect(aamotDeposited).to.equal(deposit);
+    const opt = {value: ethers.utils.parseEther("1.0")};
+    const deposit =  await deployReamFactory.connect(owner).depositToReam(opt);
+    const res = await deposit.wait();
+    //@ts-ignore
+    const amount = res.events[0].args[0];
+    // const aamotDeposited = await deployReamFactory.depositor(owner.address);
+    expect(amount).to.equal(ethers.utils.parseEther("1.0"));
   });
   it("Should send funds from ream", async function () {
     const desc = "Test run"
