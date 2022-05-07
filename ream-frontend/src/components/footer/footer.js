@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className={Style.container}>
         <p>
-            copyright 2022
+            Copyright 2022
         </p>
         <div>
             <Link to='/dashboard'>ream</Link>

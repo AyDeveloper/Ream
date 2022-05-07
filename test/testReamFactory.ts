@@ -49,8 +49,11 @@ describe("Ream Factory", function () {
     expect(amount).to.equal(ethers.utils.parseEther("1.0"));
   });
   it("Should send funds from ream", async function () {
-    const bal = await owner.getBalance();
-    console.log(`balance b4 ${bal}`);
+   
+    const getBal0 = await deployReamFactory.connect(owner).getBalance();
+    const getBalTx0 = await getBal0.wait();
+    // @ts-ignore
+    console.log(`balance of contract when deposited ${getBalTx0.events[0].args}`);
     
     const opts = {value: ethers.utils.parseEther("1.0")};
     const deposit =  await deployReamFactory.connect(owner).depositToReam(opts);
@@ -58,9 +61,7 @@ describe("Ream Factory", function () {
     //@ts-ignore
     const amount = res.events[0].args[0];
     console.log(amount);
-    const bal2 = await owner.getBalance();
-    console.log(`balance after ${bal2}`);
-
+  
     const getBal = await deployReamFactory.connect(owner).getBalance();
     const getBalTx = await getBal.wait();
     // @ts-ignore
@@ -84,7 +85,7 @@ describe("Ream Factory", function () {
   it("Should check for only admin upon sendFundsFromReam", async function () {
     const desc = "Test run"
     const to = addr1.address
-    const sendFund =  deployReamFactory.connect(addr1).sendFundsFromReam(10,to,desc);
+    const sendFund =  deployReamFactory.connect(addr1).sendFundsFromReam("1000000000000000000",to,desc);
     expect(sendFund).to.be.revertedWith("Only admin can perform this action");
   });
   it("Should check for only admin upon deposit", async function () {

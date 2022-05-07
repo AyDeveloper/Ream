@@ -12,8 +12,9 @@ const Sneak = () => {
             </div>
             <div className={Styles.detail}>
                 <h3>REAM</h3>
-                <p>Ream offers tracking of all your crypto assets no matter where they are.
-                Be it on a blockchain, a DeFi protocol or on one of the supported exchanges.</p>
+                <p>Ream is DAO treasury management system that improve the ways  DAOs manage their funds: receipts, payments, payroll,investments</p>
+                {/* // offers tracking of all your crypto assets no matter where they are.
+                Be it on a blockchain, a DeFi protocol or on one of the supported exchanges */}
             </div>
         </div>
     </div>

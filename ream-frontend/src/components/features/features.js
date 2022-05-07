@@ -29,7 +29,7 @@ const Features = () => {
             </div>
             <div>
                 <img src={dao} alt="" />
-                <p>easy dao subscription</p>
+                <p>single treasury account</p>
             </div>
         </div>
     </div>

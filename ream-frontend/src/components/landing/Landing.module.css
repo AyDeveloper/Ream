@@ -2,6 +2,7 @@
     height: 80vh;
     display: flex;
     align-items: center;
+    gap:50px;
     margin: 0 10%;
 }
 
@@ -64,10 +65,11 @@ span{
 .bannerDiv{
     width: 100%;
     /* padding: 20%; */
+    margin-left:8rem;
 }
 
 .bannerDiv img{
-    width: 80%;
+    width: 90%;
     height: 80%;
     display: flex;
     align-items: center;

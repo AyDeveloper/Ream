@@ -12,6 +12,7 @@
 
 .admin{
     display: flex;
+    gap: 20px;
 }
 
 .admin > p{
@@ -23,6 +24,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 1rem;
+    border: 1px solid #569E77;
 }
 
 .status{

@@ -48,7 +48,6 @@ h3{
     font-weight: 700;
     font-size: 20px;
     line-height: 55px;
-    text-transform: lowercase;
     color: #495371;
 }
 
@@ -58,6 +57,6 @@ p{
     font-weight: 500;
     font-size: 20px;
     line-height: 55px;
-    text-transform: lowercase;
+    text-transform: none;
     color: #495371;
 }
