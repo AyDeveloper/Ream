@@ -1,46 +1,27 @@
-# Advanced Sample Hardhat Project
+# Ream
 
-This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
+Decentrantralized Autonomous Organization (DAOs) as they are have large amount of funds handled and it appears super  important to implement bookkeeping practices and management system. This case study brought about the development of Ream.
 
-The project comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts. It also comes with a variety of other tools, preconfigured to work with the project code.
+The  smart contract development of this project demonstrates an Hardhat use case. It contains a ream and reamfactory contract, a test for that contract, a  script that deploys that contract.
+
+# Break Down
+
+1. The dapp presents a landing page that gives an overview of the site
+2. The create link, helps a dao admin, create a new treasury acount
+3. This account gives the admin access to send, deposit, track receipt and payment
+4. The receipt link on the dashboard displays the total receipts of the dao. It is populated by listening to an event emmited by the smart contract on deposit or receipt of funds
+5. The payment link on the dashboard displays the total payment of the dao. It is populated by listening to an event emmited by the smart contract when funds are transferred out.
+6. The sendfund link on the dashboard enable dao send out funds to their respective recipients.
+7. The investment link is still a work-in-progress.
 
 Try running some of the following tasks:
 
 ```shell
-npx hardhat accounts
 npx hardhat compile
-npx hardhat clean
 npx hardhat test
-npx hardhat node
-npx hardhat help
-REPORT_GAS=true npx hardhat test
-npx hardhat coverage
-npx hardhat run scripts/deploy.ts
-TS_NODE_FILES=true npx ts-node scripts/deploy.ts
-npx eslint '**/*.{js,ts}'
-npx eslint '**/*.{js,ts}' --fix
-npx prettier '**/*.{json,sol,md}' --check
-npx prettier '**/*.{json,sol,md}' --write
-npx solhint 'contracts/**/*.sol'
-npx solhint 'contracts/**/*.sol' --fix
+npx hardhat run scripts/deploy.ts --network polygon
 ```
 
-# Etherscan verification
+The dapp can be tested out here https://myream.vercel.app
 
-To try out Etherscan verification, you first need to deploy a contract to an Ethereum network that's supported by Etherscan, such as Ropsten.
 
-In this project, copy the .env.example file to a file named .env, and then edit it to fill in the details. Enter your Etherscan API key, your Ropsten node URL (eg from Alchemy), and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
-
-```shell
-hardhat run --network ropsten scripts/deploy.ts
-```
-
-Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` in this command:
-
-```shell
-npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
-```
-
-# Performance optimizations
-
-For faster runs of your tests and scripts, consider skipping ts-node's type checking by setting the environment variable `TS_NODE_TRANSPILE_ONLY` to `1` in hardhat's environment. For more details see [the documentation](https://hardhat.org/guides/typescript.html#performance-optimizations).
